@@ -1,6 +1,5 @@
 import json
 
-
 from firstapp.models import Coordinates
 
 

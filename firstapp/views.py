@@ -1,7 +1,9 @@
-from django.http import JsonResponse, HttpResponse
-from django.shortcuts import render
 from django.core import serializers
-from firstapp.logic import *
+from django.http import JsonResponse
+from django.shortcuts import render
+
+from firstapp import logic
+from firstapp.models import Coordinates
 
 
 def index(request):
@@ -15,7 +17,7 @@ def coordinates_view(request):
 
 def create_location(request):
     str_json = request.POST.get('coordinates')
-    save_location(str_json)
+    logic.save_location(str_json)
     response = {
         'data': str_json
     }
