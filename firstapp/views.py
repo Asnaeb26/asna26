@@ -16,7 +16,7 @@ def coordinates_view(request):
 
 
 def create_location(request):
-    str_json = request.POST.get('coordinates')
+    str_json = request.POST.get('new_coordinate')
     logic.save_location(str_json)
     response = {
         'data': str_json
