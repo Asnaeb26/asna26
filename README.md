@@ -1,4 +1,5 @@
 ##Расположение файлов
+
 *index.html* в `templates/firstapp/`
 
 *map.css* в `/firstapp/static/css/`
