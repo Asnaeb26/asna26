@@ -7,15 +7,12 @@ $(document).ready(function () {
 
     function tags_adder(data) {
         const coordinates = JSON.parse(data)
-        let list = '<ol>\n'
-        for (let i in coordinates) {
-            let lat = coordinates[i].fields.latitude
-            let lng = coordinates[i].fields.longitude
-            list = list + `<li> ${lat}°, ${lng}°</li>`
-        }
 
-        $('#coordinates').html(list + '</ol>');
+        let list = document.getElementById('coordinates')
+        coordinates.map(a =>
+            list.insertAdjacentHTML("beforeend", `<li>${a.fields.latitude}°, ${a.fields.longitude}°</li>`))
     }
+
 
     map.on("click", function (e) {
         new L.Marker([e.latlng.lat, e.latlng.lng]).addTo(map);
