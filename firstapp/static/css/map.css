@@ -1,0 +1,19 @@
+body {
+    font-family: serif;
+    font-style: italic;
+}
+
+#map {
+    height: 800px;
+    width: 70%;
+    border: 1px solid black;
+}
+
+#container {
+    display: flex;
+}
+
+#history {
+    margin-left: 10px;
+    font-size: 15px;
+}
