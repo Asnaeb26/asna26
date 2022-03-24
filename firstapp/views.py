@@ -1,6 +1,6 @@
 from django.core import serializers
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import Http404, HttpResponseRedirect, render, HttpResponse
 
 from firstapp import logic
 from firstapp.models import Coordinates
@@ -8,6 +8,12 @@ from firstapp.models import Coordinates
 
 def index(request):
     return render(request, 'firstapp/index.html')
+
+
+def erase_history(request):
+    if not logic.delete_coordinates(Coordinates):
+        return Http404
+    return HttpResponseRedirect('/')
 
 
 def coordinates_view(request):
