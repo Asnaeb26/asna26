@@ -1,6 +1,6 @@
 from django.core import serializers
 from django.http import JsonResponse
-from django.shortcuts import Http404, HttpResponseRedirect, render, HttpResponse
+from django.shortcuts import Http404, HttpResponseRedirect, render
 
 from firstapp import logic
 from firstapp.models import Coordinates
